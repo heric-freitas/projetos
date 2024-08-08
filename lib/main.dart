@@ -69,43 +69,83 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(
-                    children: [
-                      SelectableText(
-                        'Olá, me chamo ',
-                        textAlign: isMobile ? TextAlign.center : null,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                          fontSize: isMobile ? 25 : 50,
-                          letterSpacing: 5,
+                  if (isMobile) ...{
+                    Column(
+                      children: [
+                        SelectableText(
+                          'Olá, me chamo ',
+                          textAlign: isMobile ? TextAlign.center : null,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                            fontSize: isMobile ? 25 : 50,
+                            letterSpacing: 5,
+                          ),
                         ),
-                      ),
-                      Row(
-                        children: [
-                          SelectableText(
-                            'Heric Freitas',
-                            textAlign: isMobile ? TextAlign.center : null,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                              fontSize: isMobile ? 25 : 50,
-                              letterSpacing: 5,
+                        Row(
+                          children: [
+                            SelectableText(
+                              'Heric Freitas',
+                              textAlign: isMobile ? TextAlign.center : null,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                fontSize: isMobile ? 25 : 50,
+                                letterSpacing: 5,
+                              ),
                             ),
+                            SizedBox(
+                              width: isMobile ? 5 : 20,
+                            ),
+                            CircleAvatar(
+                              radius: isMobile ? 20 : 40,
+                              backgroundImage:
+                                  const AssetImage('assets/perfil.png'),
+                              backgroundColor: Colors.white,
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+                  } else ...{
+                    Row(
+                      children: [
+                        SelectableText(
+                          'Olá, me chamo ',
+                          textAlign: isMobile ? TextAlign.center : null,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                            fontSize: isMobile ? 25 : 50,
+                            letterSpacing: 5,
                           ),
-                          SizedBox(
-                            width: isMobile ? 5 : 20,
-                          ),
-                          CircleAvatar(
-                            radius: isMobile ? 20 : 40,
-                            backgroundImage:
-                                const AssetImage('assets/perfil.png'),
-                            backgroundColor: Colors.white,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                        Row(
+                          children: [
+                            SelectableText(
+                              'Heric Freitas',
+                              textAlign: isMobile ? TextAlign.center : null,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                fontSize: isMobile ? 25 : 50,
+                                letterSpacing: 5,
+                              ),
+                            ),
+                            SizedBox(
+                              width: isMobile ? 5 : 20,
+                            ),
+                            CircleAvatar(
+                              radius: isMobile ? 20 : 40,
+                              backgroundImage:
+                                  const AssetImage('assets/perfil.png'),
+                              backgroundColor: Colors.white,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  },
                   const SizedBox(height: 5),
                   SelectableText(
                     'Faço suas ideias se tornarem realidade',
