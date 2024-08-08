@@ -69196,7 +69196,7 @@ s.toString
 return B.c.b0(r,s)},
 $S:445}
 A.Ez.prototype={
-P(a){return new A.uQ(B.EM,"Flutter Demo",A.pO(null,null,!0),null)}}
+P(a){return new A.uQ(B.EM,"Heric Freitas",A.pO(null,null,!0),null)}}
 A.v3.prototype={
 ak(){return new A.Ky()}}
 A.Ky.prototype={
