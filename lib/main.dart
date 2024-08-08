@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   const Row(
                     children: [
-                      Text(
+                      SelectableText(
                         'Olá, me chamo ',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Row(
                         children: [
-                          Text(
+                          SelectableText(
                             'Heric Freitas',
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
@@ -65,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           CircleAvatar(
                             radius: 40,
+                            backgroundImage: AssetImage('assets/perfil.png'),
                             backgroundColor: Colors.white,
                           ),
                         ],
@@ -72,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                   const SizedBox(height: 5),
-                  const Text(
+                  const SelectableText(
                     'Faço suas ideias se tornarem realidade',
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
@@ -81,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         letterSpacing: 5),
                   ),
                   const SizedBox(height: 100),
-                  const Text(
+                  const SelectableText(
                     'Sou desenvolvedor Front-end,\nespecializado em desenvolver aplicativos e sites.',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
@@ -91,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   const SizedBox(height: 100),
-                  const Text(
+                  const SelectableText(
                     'Para entrar em contato:',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
@@ -100,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       letterSpacing: 5,
                     ),
                   ),
-                  const Text(
+                  const SelectableText(
                     'WhatsApp: (16) 99278-0707\nE-mail: hericfreitas.empresa@gmail.com',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
@@ -110,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   const SizedBox(height: 150),
-                  const Text(
+                  const SelectableText(
                     'Projetos desenvolvidos',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -133,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        const Text(
+                        const SelectableText(
                           'Vend.Ai',
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -144,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        const Text(
+                        const SelectableText(
                           'Projeto de Integração de Vendas via WhatsApp para Lojistas de Shopping',
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -155,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        const Text(
+                        const SelectableText(
                           'Desenvolvemos uma solução inovadora que simplifica o processo de vendas para lojistas de shopping, permitindo interações diretas com clientes através do WhatsApp. Essa ferramenta potencializa as vendas, oferecendo uma comunicação mais ágil e eficiente entre lojistas e consumidores.',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
@@ -166,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        const Text(
+                        const SelectableText(
                           'Versão celular:',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
@@ -202,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ]),
                         ),
                         const SizedBox(height: 20),
-                        const Text(
+                        const SelectableText(
                           'Versão web:',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
