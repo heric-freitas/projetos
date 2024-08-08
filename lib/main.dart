@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,15 +27,42 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final web = CarouselController();
+  final mobile = CarouselController();
+  int index = 0;
+  late Timer timer;
+  int start = 10;
+
+  @override
+  void dispose() {
+    web.dispose();
+    mobile.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      web.addListener(
+        () {},
+      );
+      mobile.addListener(
+        () {},
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF091C3E),
       body: LayoutBuilder(
         builder: (context, constraints) {
+          final isMobile = constraints.maxWidth <= 550;
           return SingleChildScrollView(
             child: Padding(
-              padding: constraints.maxWidth <= 550
+              padding: isMobile
                   ? const EdgeInsets.only(left: 5, top: 5, right: 5)
                   : const EdgeInsets.only(left: 100, top: 100, right: 100),
               child: Column(
@@ -44,10 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       SelectableText(
                         'Olá, me chamo ',
+                        textAlign: isMobile ? TextAlign.center : null,
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
-                          fontSize: constraints.maxWidth <= 550 ? 25 : 50,
+                          fontSize: isMobile ? 25 : 50,
                           letterSpacing: 5,
                         ),
                       ),
@@ -55,18 +85,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           SelectableText(
                             'Heric Freitas',
+                            textAlign: isMobile ? TextAlign.center : null,
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
-                              fontSize: constraints.maxWidth <= 550 ? 25 : 50,
+                              fontSize: isMobile ? 25 : 50,
                               letterSpacing: 5,
                             ),
                           ),
                           SizedBox(
-                            width: constraints.maxWidth <= 550 ? 5 : 20,
+                            width: isMobile ? 5 : 20,
                           ),
                           CircleAvatar(
-                            radius: constraints.maxWidth <= 550 ? 20 : 40,
+                            radius: isMobile ? 20 : 40,
                             backgroundImage:
                                 const AssetImage('assets/perfil.png'),
                             backgroundColor: Colors.white,
@@ -78,38 +109,42 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SizedBox(height: 5),
                   SelectableText(
                     'Faço suas ideias se tornarem realidade',
+                    textAlign: isMobile ? TextAlign.center : null,
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
-                        fontSize: constraints.maxWidth <= 550 ? 13 : 25,
+                        fontSize: isMobile ? 13 : 25,
                         letterSpacing: 5),
                   ),
                   const SizedBox(height: 100),
                   SelectableText(
                     'Sou desenvolvedor Front-end,\nespecializado em desenvolver aplicativos e sites.',
+                    textAlign: isMobile ? TextAlign.center : null,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
-                      fontSize: constraints.maxWidth <= 550 ? 15 : 30,
+                      fontSize: isMobile ? 15 : 30,
                       letterSpacing: 5,
                     ),
                   ),
                   const SizedBox(height: 100),
                   SelectableText(
                     'Para entrar em contato:',
+                    textAlign: isMobile ? TextAlign.center : null,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
-                      fontSize: constraints.maxWidth <= 550 ? 15 : 30,
+                      fontSize: isMobile ? 15 : 30,
                       letterSpacing: 5,
                     ),
                   ),
                   SelectableText(
                     'WhatsApp: (16) 99278-0707\nE-mail: hericfreitas.empresa@gmail.com',
+                    textAlign: isMobile ? TextAlign.center : null,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       color: Colors.white,
-                      fontSize: constraints.maxWidth <= 550 ? 10 : 20,
+                      fontSize: isMobile ? 10 : 20,
                       letterSpacing: 5,
                     ),
                   ),
@@ -120,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
-                      fontSize: constraints.maxWidth <= 550 ? 30 : 60,
+                      fontSize: isMobile ? 30 : 60,
                       letterSpacing: 5,
                     ),
                   ),
@@ -137,13 +172,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                         SelectableText(
+                        SelectableText(
                           'Vend.Ai',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             color: const Color(0xFFFECD31),
-                            fontSize: constraints.maxWidth <= 550 ? 30 : 60,
+                            fontSize: isMobile ? 30 : 60,
                             letterSpacing: 5,
                           ),
                         ),
@@ -154,65 +189,31 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
-                            fontSize: constraints.maxWidth <= 550 ? 18 : 35,
+                            fontSize: isMobile ? 18 : 35,
                             letterSpacing: 5,
                           ),
                         ),
                         const SizedBox(height: 10),
-                       SelectableText(
+                        SelectableText(
                           'Desenvolvemos uma solução inovadora que simplifica o processo de vendas para lojistas de shopping, permitindo interações diretas com clientes através do WhatsApp. Essa ferramenta potencializa as vendas, oferecendo uma comunicação mais ágil e eficiente entre lojistas e consumidores.',
-                          textAlign: TextAlign.justify,
+                          textAlign:
+                              isMobile ? TextAlign.center : TextAlign.justify,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             color: const Color(0xFFCAC9CC),
-                            fontSize: constraints.maxWidth <= 550 ? 13 : 25,
+                            fontSize: isMobile ? 13 : 25,
                             letterSpacing: 5,
                           ),
                         ),
                         const SizedBox(height: 20),
                         SelectableText(
                           'Versão celular:',
-                          textAlign: TextAlign.justify,
+                          textAlign:
+                              isMobile ? TextAlign.center : TextAlign.justify,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
-                            fontSize: constraints.maxWidth <= 550 ? 13 : 25,
-                            letterSpacing: 5,
-                          ),
-                        ),
-                        ConstrainedBox(
-                          constraints: BoxConstraints(
-                            maxWidth: MediaQuery.sizeOf(context).width - 50,
-                            maxHeight: 600,
-                          ),
-                          child: CarouselView(itemExtent: 300, children: [
-                            Image.asset(
-                              'assets/chat_mobile.png',
-                              fit: BoxFit.fill,
-                              height: 500,
-                            ),
-                            Image.asset(
-                              'assets/home_mobile.png',
-                              fit: BoxFit.fitHeight,
-                              height: 500,
-                              width: 500,
-                            ),
-                            Image.asset(
-                              'assets/login_mobile.png',
-                              fit: BoxFit.fitHeight,
-                              height: 500,
-                              width: 500,
-                            ),
-                          ]),
-                        ),
-                        const SizedBox(height: 20),
-                         SelectableText(
-                          'Versão web:',
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                            fontSize: constraints.maxWidth <= 550 ? 13 : 25,
+                            fontSize: isMobile ? 13 : 25,
                             letterSpacing: 5,
                           ),
                         ),
@@ -221,26 +222,68 @@ class _MyHomePageState extends State<MyHomePage> {
                             maxWidth: MediaQuery.sizeOf(context).width,
                             maxHeight: 600,
                           ),
-                          child: Row(
+                          child: CarouselView(
+                            shrinkExtent: 200,
+                            controller: mobile,
+                            itemExtent: isMobile
+                                ? MediaQuery.sizeOf(context).width * .65
+                                : 300,
                             children: [
-                              Expanded(
-                                child: SizedBox(
-                                  width: 950,
-                                  child: Image.asset(
-                                    'assets/chat_web.png',
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
+                              Image.asset(
+                                'assets/chat_mobile.png',
+                                fit: BoxFit.fill,
                               ),
-                              const SizedBox(width: 20),
-                              Expanded(
-                                child: SizedBox(
-                                  width: 950,
-                                  child: Image.asset(
-                                    'assets/home_web.png',
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
+                              Image.asset(
+                                'assets/home_mobile.png',
+                                fit: BoxFit.fill,
+                              ),
+                              Image.asset(
+                                'assets/login_mobile.png',
+                                fit: BoxFit.fill,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        SelectableText(
+                          'Versão web:',
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                            fontSize: isMobile ? 13 : 25,
+                            letterSpacing: 5,
+                          ),
+                        ),
+                        ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxWidth: MediaQuery.sizeOf(context).width,
+                            maxHeight: isMobile ? 150 : 600,
+                          ),
+                          child: CarouselView(
+                            shrinkExtent: 200,
+                            controller: web,
+                            itemExtent: isMobile
+                                ? MediaQuery.sizeOf(context).width * .65
+                                : MediaQuery.sizeOf(context).width * .56,
+                            children: [
+                              Image.asset(
+                                'assets/chat_web.png',
+                                fit: isMobile
+                                    ? BoxFit.fitWidth
+                                    : BoxFit.fitHeight,
+                              ),
+                              Image.asset(
+                                'assets/home_web.png',
+                                fit: isMobile
+                                    ? BoxFit.fitWidth
+                                    : BoxFit.fitHeight,
+                              ),
+                              Image.asset(
+                                'assets/login_web.png',
+                                fit: isMobile
+                                    ? BoxFit.fitWidth
+                                    : BoxFit.fitHeight,
                               ),
                             ],
                           ),
