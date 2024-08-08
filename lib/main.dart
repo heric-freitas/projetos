@@ -69,6 +69,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  Align(
+                    alignment: isMobile? Alignment.center : Alignment.centerLeft,
+                    child: CircleAvatar(
+                      radius: isMobile ? 40 : 80,
+                      backgroundImage: const AssetImage('assets/perfil.png'),
+                      backgroundColor: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
                   if (isMobile) ...{
                     Column(
                       children: [
@@ -83,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SelectableText(
                               'Heric Freitas',
@@ -93,15 +103,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fontSize: isMobile ? 25 : 50,
                                 letterSpacing: 5,
                               ),
-                            ),
-                            SizedBox(
-                              width: isMobile ? 5 : 20,
-                            ),
-                            CircleAvatar(
-                              radius: isMobile ? 20 : 40,
-                              backgroundImage:
-                                  const AssetImage('assets/perfil.png'),
-                              backgroundColor: Colors.white,
                             ),
                           ],
                         ),
@@ -132,15 +133,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                 letterSpacing: 5,
                               ),
                             ),
-                            SizedBox(
-                              width: isMobile ? 5 : 20,
-                            ),
-                            CircleAvatar(
-                              radius: isMobile ? 20 : 40,
-                              backgroundImage:
-                                  const AssetImage('assets/perfil.png'),
-                              backgroundColor: Colors.white,
-                            ),
                           ],
                         ),
                       ],
@@ -168,16 +160,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   const SizedBox(height: 100),
-                  SelectableText(
-                    'Para entrar em contato:',
-                    textAlign: isMobile ? TextAlign.center : null,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                      fontSize: isMobile ? 15 : 30,
-                      letterSpacing: 5,
-                    ),
-                  ),
                   SelectableText(
                     'WhatsApp: (16) 99278-0707\nE-mail: hericfreitas.empresa@gmail.com',
                     textAlign: isMobile ? TextAlign.center : null,
