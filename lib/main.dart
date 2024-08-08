@@ -33,19 +33,21 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (context, constraints) {
           return SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.only(left: 100, top: 100, right: 100),
+              padding: constraints.maxWidth <= 550
+                  ? const EdgeInsets.only(left: 5, top: 5, right: 5)
+                  : const EdgeInsets.only(left: 100, top: 100, right: 100),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Row(
+                  Row(
                     children: [
                       SelectableText(
                         'Olá, me chamo ',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
-                          fontSize: 50,
+                          fontSize: constraints.maxWidth <= 550 ? 25 : 50,
                           letterSpacing: 5,
                         ),
                       ),
@@ -56,16 +58,17 @@ class _MyHomePageState extends State<MyHomePage> {
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
-                              fontSize: 50,
+                              fontSize: constraints.maxWidth <= 550 ? 25 : 50,
                               letterSpacing: 5,
                             ),
                           ),
                           SizedBox(
-                            width: 20,
+                            width: constraints.maxWidth <= 550 ? 5 : 20,
                           ),
                           CircleAvatar(
-                            radius: 40,
-                            backgroundImage: AssetImage('assets/perfil.png'),
+                            radius: constraints.maxWidth <= 550 ? 20 : 40,
+                            backgroundImage:
+                                const AssetImage('assets/perfil.png'),
                             backgroundColor: Colors.white,
                           ),
                         ],
@@ -73,51 +76,51 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                   const SizedBox(height: 5),
-                  const SelectableText(
+                  SelectableText(
                     'Faço suas ideias se tornarem realidade',
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
-                        fontSize: 25,
+                        fontSize: constraints.maxWidth <= 550 ? 13 : 25,
                         letterSpacing: 5),
                   ),
                   const SizedBox(height: 100),
-                  const SelectableText(
+                  SelectableText(
                     'Sou desenvolvedor Front-end,\nespecializado em desenvolver aplicativos e sites.',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
-                      fontSize: 30,
+                      fontSize: constraints.maxWidth <= 550 ? 15 : 30,
                       letterSpacing: 5,
                     ),
                   ),
                   const SizedBox(height: 100),
-                  const SelectableText(
+                  SelectableText(
                     'Para entrar em contato:',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
-                      fontSize: 30,
+                      fontSize: constraints.maxWidth <= 550 ? 15 : 30,
                       letterSpacing: 5,
                     ),
                   ),
-                  const SelectableText(
+                  SelectableText(
                     'WhatsApp: (16) 99278-0707\nE-mail: hericfreitas.empresa@gmail.com',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: constraints.maxWidth <= 550 ? 10 : 20,
                       letterSpacing: 5,
                     ),
                   ),
                   const SizedBox(height: 150),
-                  const SelectableText(
+                  SelectableText(
                     'Projetos desenvolvidos',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
-                      fontSize: 60,
+                      fontSize: constraints.maxWidth <= 550 ? 30 : 60,
                       letterSpacing: 5,
                     ),
                   ),
@@ -134,46 +137,46 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        const SelectableText(
+                         SelectableText(
                           'Vend.Ai',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
-                            color: Color(0xFFFECD31),
-                            fontSize: 60,
+                            color: const Color(0xFFFECD31),
+                            fontSize: constraints.maxWidth <= 550 ? 30 : 60,
                             letterSpacing: 5,
                           ),
                         ),
                         const SizedBox(height: 20),
-                        const SelectableText(
+                        SelectableText(
                           'Projeto de Integração de Vendas via WhatsApp para Lojistas de Shopping',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
-                            fontSize: 35,
+                            fontSize: constraints.maxWidth <= 550 ? 18 : 35,
                             letterSpacing: 5,
                           ),
                         ),
                         const SizedBox(height: 10),
-                        const SelectableText(
+                       SelectableText(
                           'Desenvolvemos uma solução inovadora que simplifica o processo de vendas para lojistas de shopping, permitindo interações diretas com clientes através do WhatsApp. Essa ferramenta potencializa as vendas, oferecendo uma comunicação mais ágil e eficiente entre lojistas e consumidores.',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
-                            color: Color(0xFFCAC9CC),
-                            fontSize: 25,
+                            color: const Color(0xFFCAC9CC),
+                            fontSize: constraints.maxWidth <= 550 ? 13 : 25,
                             letterSpacing: 5,
                           ),
                         ),
                         const SizedBox(height: 20),
-                        const SelectableText(
+                        SelectableText(
                           'Versão celular:',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
-                            fontSize: 25,
+                            fontSize: constraints.maxWidth <= 550 ? 13 : 25,
                             letterSpacing: 5,
                           ),
                         ),
@@ -203,13 +206,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           ]),
                         ),
                         const SizedBox(height: 20),
-                        const SelectableText(
+                         SelectableText(
                           'Versão web:',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
-                            fontSize: 25,
+                            fontSize: constraints.maxWidth <= 550 ? 13 : 25,
                             letterSpacing: 5,
                           ),
                         ),
