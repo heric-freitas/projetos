@@ -411,6 +411,55 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   const SizedBox(height: 10),
+                  Container(
+                    padding: const EdgeInsets.all(35),
+                    width: MediaQuery.sizeOf(context).width * .4,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                          color: const Color(0xFF1f60d7),
+                          width: 4,
+                        ),
+                        borderRadius: BorderRadius.circular(8)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        SelectableText(
+                          'Barbershop',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xFFB07B01),
+                            fontSize: isMobile ? 30 : 60,
+                            letterSpacing: 5,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        SelectableText(
+                          'Projeto de agendamento de barbearia',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xFF1f60d7),
+                            fontSize: isMobile ? 18 : 35,
+                            letterSpacing: 5,
+                          ),
+                        ),
+                        const SizedBox(height: 15),
+                        SelectableText(
+                          'Desenvolvimento de um aplicativo para agendar horários, gerenciar equipe, definir horários.',
+                          textAlign:
+                              isMobile ? TextAlign.center : TextAlign.justify,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w200,
+                            color: Colors.black,
+                            fontSize: isMobile ? 13 : 25,
+                            letterSpacing: 1,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
                 ],
               ),
             ),
