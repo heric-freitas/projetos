@@ -85,15 +85,8 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 
 flutter_launcher_icons:
-  ios: true
-  android: true
-  remove_alpha_ios: true
-  image_path_ios: "assets/perfil.png"
-  image_path_android: "assets/perfil.png"
-  adaptive_icon_background: "assets/images/icon_background.png"
-  adaptive_icon_foreground: "assets/images/icon_foreground.png"
   web:
     generate: true
-    image_path: "assets/perfil.png"
+    image_path: "assets/logo.png"
     background_color: "#00FFFFFF"
     theme_color: "#00FFFFFF"
