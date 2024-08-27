@@ -69172,7 +69172,7 @@ a2=a0?B.a_:d
 a3.push(A.cW("Fa\xe7o suas ideias se tornarem realidade",A.ca(d,d,B.yW,d,d,d,d,d,d,d,d,a0?13:20,B.AB,d,B.O,d,d,!0,d,5,d,d,d,d,d,d),a2))
 a3.push(B.w1)
 a2=a0?B.a_:d
-a3.push(A.cW("Desenvolvimento Front-end,\nespecializado em desenvolvimento de aplicativos e sites.",A.ca(d,d,B.aa,d,d,d,d,d,d,d,d,a0?15:30,d,d,B.O,d,d,!0,d,5,d,d,d,d,d,d),a2))
+a3.push(A.cW("Desenvolvimento Front-end,\nespecializado em aplicativos e sites.",A.ca(d,d,B.aa,d,d,d,d,d,d,d,d,a0?15:30,d,d,B.O,d,d,!0,d,5,d,d,d,d,d,d),a2))
 a3.push(B.w1)
 a2=a0?B.a_:d
 a3.push(A.cW("WhatsApp: (16) 99278-0707\nE-mail: hericfreitas.empresa@gmail.com",A.ca(d,d,B.aa,d,d,d,d,d,d,d,d,a0?10:20,d,d,B.O,d,d,!0,d,5,d,d,d,d,d,d),a2))

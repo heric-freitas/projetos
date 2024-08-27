@@ -149,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   const SizedBox(height: 100),
                   SelectableText(
-                    'Desenvolvimento Front-end,\nespecializado em desenvolvimento de aplicativos e sites.',
+                    'Desenvolvimento Front-end,\nespecializado em aplicativos e sites.',
                     textAlign: isMobile ? TextAlign.center : null,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
