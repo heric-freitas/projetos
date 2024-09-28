@@ -56121,7 +56121,7 @@ return A.T(A.JD(A.Ip(null,"hericfreitas.empresa@gmail.com","subject=Quero um or\
 case 2:return A.L(null,r)}})
 return A.M($async$oy,r)}}
 A.NY.prototype={
-$2(a,b){var s=null,r=A.a8u("assets/LOGO.jpg",s,s,s),q=A.a46(B.n,1),p=this.a,o=t.E
+$2(a,b){var s=null,r=A.a8u("assets/logo.png",s,s,s),q=A.a46(B.n,1),p=this.a,o=t.E
 return A.iB(A.b([new A.xH(r,100,s),A.pd(s,A.iB(A.b([B.KE,A.a4P(!1,!0,B.KF,s,!0,s,s,s,s,s,s,s,s,s,p.gRm(),s,s,s,s),B.u1,A.a4P(!1,!0,B.KJ,s,!0,s,s,s,s,s,s,s,s,s,p.grd(),s,s,s,s)],o),B.aq,B.a6,B.al),B.H,s,s,new A.dS(s,s,q,s,s,s,B.aK),s,s,B.iN,B.iN,s,s,b.b-10)],o),B.aq,B.a6,B.al)},
 $S:46}
 A.zg.prototype={
